@@ -11,20 +11,46 @@
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
+    "scheme": "ai-wallpapers",
     "assetBundlePatterns": [
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "infoPlist": {
+        "NSPhotoLibraryUsageDescription": "Permite a Fondos IA acceder a tus fotos para descargar la imagen.",
+        "NSPhotoLibraryAddUsageDescription": "Permite a Fondos IA acceder a tus fotos para descargar la imagen."
+      }
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "permissions": [
+        "android.permission.READ_EXTERNAL_STORAGE",
+        "android.permission.WRITE_EXTERNAL_STORAGE",
+        "android.permission.ACCESS_MEDIA_LOCATION"
+      ],
+      "package": "com.paulaymanu113.fondosia"
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "plugins": [
+      [
+        "expo-media-library",
+        {
+          "photosPermission": "Permite a Fondos IA acceder a tus fotos para descargar la imagen.",
+          "savePhotosPermission": "Permite a Fondos IA acceder a tus fotos para descargar la imagen.",
+          "isAccessMediaLocationEnabled": true
+        }
+      ]
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "cdd05785-beae-4555-9a00-a295dd50e67a"
+      }
     }
   }
 }
