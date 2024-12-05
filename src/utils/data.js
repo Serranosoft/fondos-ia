@@ -1,38 +1,43 @@
 export const categories_raw = [
     {
+        name: "Flores",
+        qty: 5,
+        image: require("../../assets/flores/flores-2.jpg"),
+    },
+    {
         name: "Animales",
-        qty: 3,
-        image: require("../../assets/animales/animales-2.jpg"),
+        qty: 5,
+        image: require("../../assets/animales/animales-4.jpg"),
     },
     {
         name: "Anime",
-        qty: 17,
-        image: require("../../assets/anime/anime-2.jpg"),
+        qty: 21,
+        image: require("../../assets/anime/anime-20.jpg"),
     },
     {
         name: "Comida",
         qty: 17,
-        image: require("../../assets/comida/comida-2.jpg"),
+        image: require("../../assets/comida/comida-15.jpg"),
     },
     {
         name: "Disney",
         qty: 8,
-        image: require("../../assets/disney/disney-2.jpg"),
+        image: require("../../assets/disney/disney-7.jpg"),
     },
     {
         name: "Futurista",
         qty: 9,
-        image: require("../../assets/futurista/futurista-2.jpg"),
+        image: require("../../assets/futurista/futurista-9.jpg"),
     },
     {
         name: "Naturaleza",
-        qty: 18,
-        image: require("../../assets/naturaleza/naturaleza-2.jpg"),
+        qty: 21,
+        image: require("../../assets/naturaleza/naturaleza-20.jpg"),
     },
     {
         name: "Vehiculos",
         qty: 9,
-        image: require("../../assets/vehiculos/coche-2.jpg"),
+        image: require("../../assets/vehiculos/coche-8.jpg"),
     }
 ]
 
@@ -129,19 +134,10 @@ export const vehiculos = [
     require("../../assets/vehiculos/coche-8.jpg"),
     require("../../assets/vehiculos/coche-9.jpg"),
 ]
-/* 
-export async function fetchImages(category, length) {
-    const images = [];
-    let result = "";
-    
-    const urlSegment = "https://mollydigital.manu-scholz.com/wp-content/uploads/2023/10/unas-"
-    const patternWithoutÑ = category.replace("ñ", "n");
-    const pattern = patternWithoutÑ.replace(/ /g, '-').toLowerCase();  
-
-    for (let i = 1; i <= length; i++) {
-        result = urlSegment + pattern + "-" + i +".jpg"
-        images.push(result);
-    }
-
-    return images;
-} */
+export const flores = [
+    require("../../assets/flores/flores-1.jpg"),
+    require("../../assets/flores/flores-2.jpg"),
+    require("../../assets/flores/flores-3.jpg"),
+    require("../../assets/flores/flores-4.jpg"),
+    require("../../assets/flores/flores-5.jpg"),
+]

@@ -1,9 +1,10 @@
 import { SplashScreen, Stack } from "expo-router";
 import { View, StatusBar, StyleSheet } from "react-native";
-import { useEffect } from "react";
+import { createRef, useEffect, useState } from "react";
 import { useFonts } from "expo-font";
 import { DataContext } from "../src/DataContext";
 import * as Notifications from 'expo-notifications';
+import AdsHandler from "../src/utils/AdsHandler";
 
 SplashScreen.preventAutoHideAsync();
 export default function Layout() {
@@ -33,6 +34,17 @@ export default function Layout() {
         });
     }, [])
 
+    // Gestión de anuncios
+    const [adTrigger, setAdTrigger] = useState(0);
+    const adsHandlerRef = createRef();
+
+    useEffect(() => {
+        if (adTrigger > 5) {
+            adsHandlerRef.current.showIntersitialAd();
+            setAdTrigger(0);
+        }
+    }, [adTrigger])
+
     // Esperar hasta que las fuentes se carguen
     if (!fontsLoaded) {
         return null;
@@ -40,7 +52,8 @@ export default function Layout() {
 
     return (
         <View style={styles.container}>
-            <DataContext.Provider value={{  }}>
+            <AdsHandler ref={adsHandlerRef} adType={[0]} />
+            <DataContext.Provider value={{ setAdTrigger: setAdTrigger }}>
                 <Stack />
             </DataContext.Provider>
             <StatusBar style="light" />

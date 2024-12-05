@@ -3,7 +3,7 @@ import { Pressable, StyleSheet, ToastAndroid, View, Image, Text, Modal, Touchabl
 import Header from "../src/components/header";
 import { ui } from "../src/utils/styles";
 import { useEffect, useState } from "react";
-import { animales, anime, comida, disney, futurista, naturaleza, vehiculos } from "../src/utils/data";
+import { animales, anime, comida, disney, flores, futurista, naturaleza, vehiculos } from "../src/utils/data";
 import ManageWallpaper, { TYPE } from 'react-native-manage-wallpaper';
 import { AntDesign } from '@expo/vector-icons';
 
@@ -37,6 +37,9 @@ export default function ImageWrapper() {
                 break;
             case "vehiculos":
                 setImg(vehiculos[index]);
+                break;
+            case "flores":
+                setImg(flores[index]);
                 break;
             default:
                 setImg(null);
